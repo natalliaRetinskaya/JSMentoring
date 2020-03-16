@@ -1,2 +1,2 @@
 console.log('Hello World!')
-let newVar  = test;
+let newVar  = 123;
