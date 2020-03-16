@@ -1,0 +1,1 @@
+let learnJS = "second variable"
