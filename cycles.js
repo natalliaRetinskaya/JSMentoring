@@ -96,9 +96,9 @@ console.log(join(substr, ""))
 
 //with FOR OF
 const substr = ["I", " love", " JS"];
-for (const element of substr) {
-  console.log(element)
-}
+let str = "";
+for (let element of substr) { str += element}
+console.log(str)
 
   /**
    * calculate a total of income of certain person
