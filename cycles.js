@@ -49,7 +49,7 @@ function factorial(num) {
   let i = num - 1
   while (i >= 1) {
     num = num * i;
-    i--1;
+    i--;
   }
   return num
 }
@@ -72,9 +72,9 @@ console.log(factorial(10))
 /**
  * return concatenated string from an array of substring
  */
-{
-  const substr = ["I", " love", " JS"];
-}
+// {
+//   const substr = ["I", " love", " JS"];
+// }
 const substr = ["I", " love", " JS"];
 let concatened = substr.join('')
 
@@ -83,18 +83,15 @@ console.log(concatened)
 //with FOR 
 const substr = ["I", " love", " JS"];
 
-function join(array, separator) {
-  let convertedToString
-  for (let i = 0; i < 1; i++) {
-    convertedToString = array[i]
-  }
-  for (let i = 1; i < array.length; i++) {
-    convertedToString += separator + array[i]
+function join(array) {
+  let convertedToString = ""
+  for (let i = 0; i < array.length; i++) {
+    convertedToString += array[i]
   }
   return convertedToString
 }
 
-console.log(join(substr, ""))
+console.log(join(substr))
 
 //with FOR OF
 const substr = ["I", " love", " JS"];
@@ -130,9 +127,3 @@ for (let key in personIncomes) {
 }
 console.log(incomes)
 
-function incomeOfCertainPerson(object) {
-  if (object.value !== undefined) {
-    object.value
-  }
-
-  // }
