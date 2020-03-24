@@ -12,20 +12,20 @@
 
 function calculateDiscount(redemption) {
     let discount;
-    if (redemption <= 350) {
+    if (redemption > 0 && redemption <= 350) {
       discount = '0%';
-    } else if (redemption >= 351 && redemption <= 1350){
+    } else if (redemption > 350 && redemption <= 1350){
       discount = '15%'
-    } else if (redemption >= 1351 && redemption <= 2700) {
+    } else if (redemption > 1350 && redemption <= 2700) {
       discount = '30%'
-    } else if (redemption >= 2701 && redemption <= 6500) {
+    } else if (redemption > 2700 && redemption <= 6500) {
       discount = '45%'
     }
   
     return discount;
   }
 
-  console.log(calculateDiscount(400))
+  console.log(calculateDiscount(350.5))
   
   /** TODO
    * implement factorial algorithm using for, while, do..while operators
@@ -34,21 +34,22 @@ function calculateDiscount(redemption) {
     const i = 10; //10! = 3628800
   }
 // with FOR
-  function factorial(num) {
-    for (let i = num - 1; i >= 1; i -= 1) {
-      num *= i;
+  function factorialCalc(num) {
+    let factorial = num
+    for (let i = num - 1; i >= 1; i --) {
+      factorial *= i;
     }
-    return num
+    return factorial
   }
   
-  // console.log(factorial(10))
+  console.log(factorialCalc(10))
 
   // with while
   function factorial(num) {
     let i = num - 1
     while (i >= 1) {
       num = num * i;
-      i -= 1; 
+      i -- 1; 
     }
     return num
   }
@@ -60,7 +61,7 @@ function calculateDiscount(redemption) {
     let i = num - 1
     do {
       num = num * i;
-      i -= 1; } while (i >= 1);
+      i --; } while (i >= 1);
     return num
   }
   
@@ -76,7 +77,28 @@ function calculateDiscount(redemption) {
   const substr = ["I", " love", " JS"];
   let concatened = substr.join('')
   
-  // console.log(concatened)
+  console.log(concatened)
+
+  //with FOR 
+  const substr = ["I", " love", " JS"];
+  function join(array, separator) {
+    let convertedToString
+    for (let i = 0; i < 1; i++) {
+        convertedToString = array[i]
+      }
+    for (let i = 1; i < array.length; i++) {
+        convertedToString += separator + array[i]
+      }
+    return convertedToString
+}
+
+console.log(join(substr, ""))
+
+//with FOR OF
+const substr = ["I", " love", " JS"];
+for (const element of substr) {
+  console.log(element)
+}
 
   /**
    * calculate a total of income of certain person
@@ -104,10 +126,10 @@ function calculateDiscount(redemption) {
     }
     console.log(incomes)
 
-    // function incomeOfCertainPerson(object) {
-    //   if (object.value !== undefined) {
-    //     object.value
-    //   }
+    function incomeOfCertainPerson(object) {
+      if (object.value !== undefined) {
+        object.value
+      }
 
     // }
   
