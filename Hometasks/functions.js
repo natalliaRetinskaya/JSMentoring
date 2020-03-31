@@ -76,15 +76,12 @@ function getUser(firstName = "unknown", lastName = "unknown", age = "unknown") {
  */
 
 function getTotalPath(path) {
-    function getTotalPath(path) {
-        let totalPath
-        for (let i = 0; i < path.length; i++) {
-
-        }
-        //return totalPath
+    let totalPath = 0
+    for (let i = 0; i < path.length; i++) {
+        totalPath = totalPath + path[i]["distance"]
     }
-    
-    console.log(getTotalPath(obj))
+    return totalPath
+}
 
 module.exports = {
     add,
