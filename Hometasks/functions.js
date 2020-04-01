@@ -56,7 +56,7 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName = "null", lastName = "null", age = "null") {
+function getUser(firstName = null, lastName = null, age = null) {
     return obj = {
         firstName: firstName,
         lastName: lastName,
