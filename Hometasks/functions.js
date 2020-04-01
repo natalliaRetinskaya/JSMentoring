@@ -35,12 +35,7 @@ function isOdd(n) {
  * e.g ["one", "two", "three"] should return one
  */
 function getShortest(wordArray) {
-    let newArr = []
-    for (let i = 0; i < wordArray.length; i++){
-    newArr.push(wordArray[i].length)
-    }
-    newArr.sort()
-    return newArr[0]
+    return wordArray.sort((a, b) => a.length - b.length)[0];
 }
 
 /**
@@ -48,7 +43,7 @@ function getShortest(wordArray) {
  * e.g getGoogle(5) should return "gooooogle"
  */
 function getGoogle(n) {
-    return `G${(new Array(n)).fill('o').join('')}gle`
+    return `g${(new Array(n)).fill('o').join('')}gle`
 }
 // Или обязательно через letter.repeat?
 
@@ -61,7 +56,7 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName = "unknown", lastName = "unknown", age = "unknown") {
+function getUser(firstName = "null", lastName = "null", age = "null") {
     return obj = {
         firstName: firstName,
         lastName: lastName,
