@@ -9,9 +9,9 @@ const {
  * console.log data got from callbackFunction
  */
 
-function printDataCallback() {
-    async function printData(data) {
-        await console.log(data)
+unction printDataCallback() {
+    function printData(data) {
+        console.log(data)
     }
     callbackFunction(printData)
 }
