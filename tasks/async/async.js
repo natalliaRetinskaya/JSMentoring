@@ -9,7 +9,7 @@ const {
  * console.log data got from callbackFunction
  */
 
-unction printDataCallback() {
+function printDataCallback() {
     function printData(data) {
         console.log(data)
     }
