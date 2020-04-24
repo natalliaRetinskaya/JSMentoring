@@ -72,8 +72,8 @@ function handlePromiseError() {
 async function handleAsyncAwaitError() {
     try {
         let result = await promiseFunctionError();
-    } catch (err) {
-        throw err
+    } catch (error) {
+        throw error
     }
 }
 
