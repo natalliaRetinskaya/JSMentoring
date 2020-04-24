@@ -10,8 +10,8 @@ const {
  */
 
 function printDataCallback() {
-    function printData(data) {
-        console.log(data)
+    async function printData(data) {
+        await console.log(data)
     }
     callbackFunction(printData)
 }
@@ -29,7 +29,7 @@ function printDataPromise() {
  * console.log data got from promiseFunction using async/await
  */
 async function printDataAsyncAwait() {
-    promiseFunction().then((data) => {
+    await promiseFunction().then((data) => {
         console.log(data)
     })
 }
@@ -50,36 +50,36 @@ function handleErrorCallback() {
  * throw error come from promiseFunctionError
  */
 function handlePromiseError() {
-    promiseFunctionError.catch();
+   promiseFunctionError.catch(Error);
 }
 
 
-// console.log(promiseFunctionError())
-// promiseFunctionError().then(()=>{}).catch((error) => {
-//     //console.log(error)
-//     throw error
+    // console.log(promiseFunctionError())
+    // promiseFunctionError().then(()=>{}).catch((error) => {
+    //     //console.log(error)
+    //     throw error
 
-//handlePromiseError()
+    //handlePromiseError()
 
-/**
- * throw error come from promiseFunctionError using async/await
- */
-async function handleAsyncAwaitError() {
-    try {
-        await promiseFunctionError();
-    } catch (Error) {
-        console.error(Error);
+    /**
+     * throw error come from promiseFunctionError using async/await
+     */
+    async function handleAsyncAwaitError() {
+        try {
+            await promiseFunctionError();
+        } catch (Error) {
+            console.error(Error);
+        } 
+    }
+
+
+
+
+    module.exports = {
+        printDataCallback,
+        printDataPromise,
+        handleErrorCallback,
+        handlePromiseError,
+        printDataAsyncAwait,
+        handleAsyncAwaitError
     };
-};
-
-
-
-
-module.exports = {
-    printDataCallback,
-    printDataPromise,
-    handleErrorCallback,
-    handlePromiseError,
-    printDataAsyncAwait,
-    handleAsyncAwaitError
-};
